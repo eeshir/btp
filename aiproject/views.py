@@ -14,8 +14,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 
 def home(request):
-    # return(HttpResponse('<h1>Welcome to BTP</h1>'))
-    return render(request,'home.html')
+    return(HttpResponse('<h1>Welcome to BTP</h1>'))
+    # return render(request,'home.html')
 
 def forestmodel(request):
     # return(HttpResponse('<h1>Welcome to BTP</h1>'))
