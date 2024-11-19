@@ -102,7 +102,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        if username=="eeshir" and password=="alpha":
+        if username=="eeshir" and password=="12345":
             context=login()
             return render(request, 'login.html',context)
         else:
