@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Responsive About Us Page </title>
+<!--    <link rel="stylesheet" href="aboutus.css">-->
+</head>
+<style>
+    /* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+    color: #333;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Container styles */
+#aboutUs {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Image styles */
+.aipic {
+    width: 600px;
+    height: 500px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+/* Content styles */
+.content {
+    max-width: 600px;
+}
+
+h2 {
+    margin-bottom: 5px;
+    margin-right: 20px; /* Add some space between the heading and other elements */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow effect */
+    color: #333; /* Set the text color */
+    font-size: 24px; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+  }
+
+
+/* Paragraph styles */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Description paragraph styles */
+.description {
+    font-weight: bold;
+}
+
+/* Vision paragraph styles */
+.vision {
+    font-style: italic;
+}
+</style>
+<body>
+
+    <section id="aboutUs">
+        <img class="aipic" src="{% static 'aiproject/aipic.jpg' %}" alt="computer user">
+        <div class="content">
+            <h2>About Us</h2>
+            <p class="description">
+                Studying how AI affects engineers through ML models helps
+                us see how they learn and grow. By looking at the engineers,
+                employers can make changes better suited to what's needed in the
+                industry.
+            </p><br>
+            <h2>Our Vision</h2>
+            <p class="vision">
+                Our vision is to use ML models to comprehend the influence of AI on
+                engineers, allowing us to customize educational methods for
+                the AI-dominated industry. Through analyzing student performance and
+                learning behaviors, we strive to cultivate essential skills and
+                knowledge, ensuring students are well-prepared for the evolving
+                engineering landscape.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>

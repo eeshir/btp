@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./desktop-9.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Katibeh:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dynalight:wght@400&display=swap"
+    />
+    <style>
+      .desktop-9-child {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: #d5f8cc;
+  position: absolute;
+  top: calc(50% + 117px);
+  left: calc(50% + 176px);
+  border-radius: 20px;
+  width: 164px;
+  height: 61px;
+}
+.form-data-saved,
+.home {
+  position: absolute;
+  display: inline-block;
+}
+.home {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: calc(50% + 105px);
+  left: calc(50% + 206px);
+  font-size: var(--font-size-36xl);
+  font-family: var(--font-katibeh);
+  color: var(--color-black);
+  text-align: left;
+}
+.form-data-saved {
+  top: calc(50% - 9px);
+  left: calc(50% - 325px);
+  width: 688px;
+}
+.thank-you {
+  position: absolute;
+  top: calc(50% - 198px);
+  left: calc(50% - 300px);
+  font-size: 150px;
+  font-family: var(--font-dynalight);
+}
+.desktop-9 {
+  width: 100%;
+  position: relative;
+  border-radius: var(--br-11xs);
+  background-color: #ebfbfd;
+  height: 800px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 70px;
+  color: var(--color-black);
+  font-family: var(--font-katibeh);
+}
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-katibeh: Katibeh;
+  --font-dynalight: Dynalight;
+
+  /* font sizes */
+  --font-size-81xl: 100px;
+  --font-size-31xl: 50px;
+  --font-size-11xl: 30px;
+  --font-size-21xl: 40px;
+  --font-size-91xl: 110px;
+  --font-size-14xl: 33px;
+  --font-size-36xl: 55px;
+  --font-size-16xl: 35px;
+  --font-size-2xl: 21px;
+  --font-size-9xl: 28px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-gainsboro: #d9d9d9;
+  --color-gray-100: #3f1e1e;
+  --color-gray-200: rgba(255, 255, 255, 0.56);
+
+  /* Paddings */
+  --padding-lg: 18px;
+  --padding-lgi: 19px;
+  --padding-mini: 15px;
+  --padding-xl: 20px;
+
+  /* Border radiuses */
+  --br-11xs: 2px;
+  --br-11xl: 30px;
+  --br-31xl: 50px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="desktop-9">
+      <button class="desktop-9-child"></button>
+      <button id="home" class="home">Home</button>
+      <div class="form-data-saved">Form Data Saved Successfully</div>
+      <div class="thank-you">Thank You</div>
+    </div>
+  </body>
+<script>
+  document.getElementById('home').addEventListener('click', function() {
+    window.location.href = '/';
+  });
+</script>
+</html>

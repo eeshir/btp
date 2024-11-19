@@ -1,0 +1,105 @@
+body {
+  background-image: url('{% static 'aiproject/img1_bg.jpg' %}');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+.container {
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  height: 100vh;
+}
+
+.admin,
+.user {
+  border: none; 
+  padding: 15px 30px;
+  margin: 20px; 
+  border-radius: 5px; 
+  font-size: 50px; 
+  cursor: pointer; 
+}
+
+/* .user {
+  background-color: #ffc107; 
+  color: #000; 
+} */
+
+/* .admin {
+  background-color: #007bff; 
+  color: #fff; 
+}  */
+
+.admin {
+  width: 400px;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.admin:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.admin:focus {
+  outline: none;
+}
+
+.admin {
+  background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+.user {
+  width: 200px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+
+  border-radius: 50px;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.user:hover {
+  background-position: 100% 0;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.user:focus {
+  outline: none;
+}
+
+.user {
+  background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
+  box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
