@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ 'btp-1-pffo.onrender.com',
     'localhost',
-    '127.0.0.1','aiproject-b7wb.onrender.com',]
+    '0.0.0.0','aiproject-b7wb.onrender.com',]
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
