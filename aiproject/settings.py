@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-4lnxt!opffq$0lvisvbrygkf4sn6r(6_xo*+=i!af5+_rk99u-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'btp-1-pffo.onrender.com',
+ALLOWED_HOSTS = [ '*','btp-1-pffo.onrender.com',
     'localhost',
     '0.0.0.0','aiproject-b7wb.onrender.com',]
 
