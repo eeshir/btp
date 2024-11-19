@@ -1,5 +1,5 @@
 body {
-  background-image: url("{% static 'aiproject/img1_bg.jpg' %}");
+  background-image: url("https://res.cloudinary.com/dvn0crswa/image/upload/v1732022509/img1_bg_yyxqzp.jpg");
   background-size: cover; 
   background-position: center; 
   background-repeat: no-repeat; 
