@@ -21,7 +21,14 @@ body {
     background-repeat: no-repeat;
 }
 .charts{
-    display: flex;
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center;    /* Center images horizontally */
+  gap: 10px;
+}
+.charts img {
+  width: 80%;
+  height: 70%; /* Crops the image if the aspect ratio doesn't match */
 }
 /* Heading styles */
 .heading {
@@ -124,22 +131,22 @@ button {
         <h1 class="heading">Linear Regression Model</h1>
     </div>
     <!-- Loop through each plot in the graphics list -->
-    {% for graphic in graphics %}
         <!-- Display the plot -->
         <div class="charts">
-        <img src="data:image/png;base64,{{ graphic }}" alt="Chart {{ forloop.counter }}">
-        </div>
-    {% endfor %}
+            <img src="https://res.cloudinary.com/dvn0crswa/image/upload/v1732197306/download_lojbxj.png" alt="Chart {{ forloop.counter }}">
+            <img src="https://res.cloudinary.com/dvn0crswa/image/upload/v1732197318/download_adsjxp.png" alt="Chart {{ forloop.counter }}">
+            <img src="https://res.cloudinary.com/dvn0crswa/image/upload/v1732197325/download_zigfgq.png" alt="Chart {{ forloop.counter }}">
+          </div>
     <div class="values">
-        <h3 id="mse">Mean Squared Error: {{mse}}</h3>
-        <h3 id="rsqrd">R-squared: {{r2}}</h3>
-        <h3 id="coeff">coefficients: {{coefficients}}</h3>
+        <h3 id="mse">Mean Squared Error: 0.5282285748236858</h3>
+        <h3 id="rsqrd">R-squared: 0.008392340565357537</h3>
+        <h3 id="coeff">coefficients: [-0.02018329 0.06308595 -0.35009169 -0.02073327]</h3>
     </div>
     <button id="nxt-button" class="next-btn"><span>Next</span></button>
 </body>
 <script>
     document.getElementById('nxt-button').addEventListener('click', function() {
-    window.location.href = '/allcharts';
+    window.location.href = '/forestmodel';
   });
 </script>
 </html>
