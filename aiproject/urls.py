@@ -30,7 +30,7 @@ path("about/", views.about,name="about"),
 path("team/", views.team,name="team"),
 path("forestmodel/", views.forestmodel,name="forest"),
 path("allcharts/", views.allcharts,name="charts"),
-path("LogRegr/", views.LogRegr,name="logregr"),
+path("LogRegr/", views.LogRegr,name="logRegr"),
 path("Hclustering/", views.Hclustering,name="Hclustering"),
     # path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 

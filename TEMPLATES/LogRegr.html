@@ -226,11 +226,17 @@
             </table>
         </div>
     </div>
-    <button id="nxt-button" class="next-btn"><span>Next</span></button>
+    <div style="display: flex; justify-content: space-between">
+        <button id="prev-button" class="next-btn"><span>Previous</span></button>
+        <button id="nxt-button" class="next-btn"><span>Next</span></button>
+    </div>
 </body>
 <script>
     document.getElementById('nxt-button').addEventListener('click', function () {
         window.location.href = '/Hclustering';
+    });
+    document.getElementById('nxt-button').addEventListener('click', function () {
+        window.location.href = '/forestmodel';
     });
 </script>
 
