@@ -74,6 +74,13 @@ def ouradmin(request):
     # return(HttpResponse('<h1>Welcome to Form</h1>'))
     return render(request, 'ouradmin.html')
 
+def LogRegr(request):
+    # return(HttpResponse('<h1>Welcome to Form</h1>'))
+    return render(request, 'LogRegr.html')
+
+def Hclustering(request):
+    # return(HttpResponse('<h1>Welcome to Form</h1>'))
+    return render(request, 'Hclustering.html')
 
 # def login():
 #     # return(HttpResponse('<h1>Welcome to Form</h1>'))
