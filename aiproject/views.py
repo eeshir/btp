@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login
 from formapp.models import NewModel
 from django.shortcuts import render
 import matplotlib.pyplot as plt
-import seaborn as sns
+# import seaborn as sns
 from io import BytesIO
 import base64
 import pandas as pd
