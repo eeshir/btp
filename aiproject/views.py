@@ -3,7 +3,6 @@ from django.contrib.auth import authenticate, login
 from formapp.models import NewModel
 from django.shortcuts import render
 import matplotlib.pyplot as plt
-# import seaborn as sns
 from io import BytesIO
 import base64
 import pandas as pd
@@ -12,7 +11,6 @@ matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 def home(request):
@@ -20,133 +18,15 @@ def home(request):
     return render(request,'home.html')
 
 def forestmodel(request):
-    # queryset = NewModel.objects.all().values('q6', 'q7', 'q8', 'q9', 'q10')
-    # data = pd.DataFrame(list(queryset))
-
-    # # Random Forest Model for questions 6 to 10
-    # X_rf = data[['q6', 'q7', 'q8', 'q9']]
-    # y_rf = data['q10']
-
-    # X_train_rf, X_test_rf, y_train_rf, y_test_rf = train_test_split(X_rf, y_rf, test_size=0.2, random_state=42)
-
-    # model_rf = RandomForestRegressor(random_state=42)
-
-    # # Train the Random Forest model
-    # model_rf.fit(X_train_rf, y_train_rf)
-
-    # # Make predictions on the testing set
-    # y_pred_rf = model_rf.predict(X_test_rf)
-    # graphics=[]
-
-    # # Calculate metrics
-    # mse_rf = mean_squared_error(y_test_rf, y_pred_rf)
-    # r2_rf = r2_score(y_test_rf, y_pred_rf)
-    
-    # feature_importance_rf = model_rf.feature_importances_
-
-    # # Generate and save the plot
-    # plt.figure(figsize=(10, 6))
-    # plt.scatter(y_test_rf, y_pred_rf, alpha=0.7)
-    # plt.xlabel('Actual Values')
-    # plt.ylabel('Predicted Values')
-    # plt.title('Actual vs Predicted Values')
-
-    # # Save the plot to a BytesIO object
-    # buffer = BytesIO()
-    # plt.savefig(buffer, format='png')
-    # buffer.seek(0)
-    # image_png = buffer.getvalue()
-    # buffer.close()
-
-    # graphic = base64.b64encode(image_png)
-    # graphic = graphic.decode('utf-8')
-
-    # # Append the base64-encoded image to the list
-    # graphics.append(graphic)
-
-    # plt.clf()
-
-    # features = ['q6','q7','q8','q9']
-    # plt.bar(features, model_rf.coef_)
-    # plt.xlabel("Features")
-    # plt.ylabel("Coefficients")
-    # plt.title("Coefficients of Features")
-
-    # buffer = BytesIO()
-    # plt.savefig(buffer, format='png')
-    # buffer.seek(0)
-    # image_png = buffer.getvalue()
-    # buffer.close()
-
-    # # Encode the image to base64
-    # graphic = base64.b64encode(image_png)
-    # graphic = graphic.decode('utf-8')
-
-    # # Append the base64-encoded image to the list
-    # graphic.append(graphic)
-
-    # # # # Clear the current plot to prepare for the next iteration
-    # plt.clf()
-
-#     residuals = y_test_rf - y_pred_rf
-#     plt.scatter(y_pred_rf, residuals)
-#     plt.xlabel("Predicted Values")
-#     plt.ylabel("Residuals")
-#     plt.title("Residual Plot")
-#     plt.axhline(y=0, color='r', linestyle='-')
-
-#     buffer = BytesIO()
-#     plt.savefig(buffer, format='png')
-#     buffer.seek(0)
-#     image_png = buffer.getvalue()
-#     buffer.close()
-
-#     # Encode the image to base64
-#     graphic = base64.b64encode(image_png)
-#     graphic = graphic.decode('utf-8')
-
-#     # Append the base64-encoded image to the list
-#     graphics.append(graphic)
-
-#     # Clear the current plot to prepare for the next iteration
-#     plt.clf()
-
-#     plt.figure(figsize=(10, 6))
-#     sns.heatmap(pd.DataFrame({'Actual': y_test_rf, 'Predicted': y_pred_rf}).corr(), annot=True, cmap='coolwarm')
-#     plt.title('Heatmap of Predicted Concerns')
-
-#     # Save the heatmap to a BytesIO object
-#     buffer = BytesIO()
-#     plt.savefig(buffer, format='png')
-#     buffer.seek(0)
-#     heatmap_png = buffer.getvalue()
-#     buffer.close()
-
-#     # Encode the heatmap to base64
-#     heatmap_graphic = base64.b64encode(heatmap_png).decode('utf-8')
-
-#     # Append the heatmap graphic to the list
-#     graphics.append(heatmap_graphic)
-
-#     # Encode the image to base64
-
-#     # Pass the results to the template
-    context = {
-        # 'mse': mse_rf,
-        # 'r2': r2_rf,
-        # 'coefficients': feature_importance_rf,
-        # 'graphics': graphics,
-        # 'feature_importance': feature_importance_rf
-    }
-
-    return render(request, 'forestmodel.html', context)
+    # return(HttpResponse('<h1>Welcome to BTP</h1>'))
+    return render(request,'forestmodel.html')
 
 def allcharts(request):
     # Retrieve data from the database
     queryset = NewModel.objects.all()
 
     # Initialize an empty list to store base64-encoded images
-    graphic = []
+    graphics = []
 
     # Iterate over the columns
     for i in range(1, 21):  # Assuming you want to plot three columns (q1, q2, q3)
@@ -171,13 +51,13 @@ def allcharts(request):
         graphic = graphic.decode('utf-8')
 
         # Append the base64-encoded image to the list
-        graphic.append(graphic)
+        graphics.append(graphic)
 
         # Clear the current plot to prepare for the next iteration
         plt.clf()
 
     # Pass the list of base64-encoded images to the template
-    context = {'graphic': graphic}
+    context = {'graphics': graphics}
 
     return render(request,'allcharts.html',context)
 
@@ -222,7 +102,7 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        if username=="eeshir" and password=="alpha":
+        if username=="eeshir" and password=="12345":
             context=login()
             return render(request, 'login.html',context)
         else:
